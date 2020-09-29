@@ -1,4 +1,6 @@
 import time
+from bst import Node
+
 
 start_time = time.time()
 
@@ -12,17 +14,13 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
-# names1 = {n for n in names_1}
-# names2 = {n for n in names_2}
+bst = Node('Name')
+for name in names_1:
+    bst.insert(name)
 
-# [duplicates.append(name) for name in names_1 if name in names_2]
-
-name1 = names_1
-name2 = names_2
-
-for names in name1:
-    if names in name2:
-        duplicates.append(names)
+for name in names_2:
+    if bst.contains(name):
+        duplicates.append(name)
 
 
 # Replace the nested for loops below with your improvements
